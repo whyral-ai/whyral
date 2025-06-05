@@ -1,14 +1,23 @@
+import React from 'react';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ROUTES from './constants/routes';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Dashboard from './pages/NotFound';
+
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="p-8 bg-white rounded shadow text-center">
-        <h1 className="text-3xl font-bold text-blue-600 mb-4">
-          Whyral.ai is Under Development
-        </h1>
-        <p className="text-gray-700">Give us Some Time</p>
+    <Router>
+      <div className='body'>
+      <Routes>
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.LOGIN} element={<Login />} />
+        <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+      </Routes>
       </div>
-    </div>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
