@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-sm text-white shadow-md">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-                <div className="text-xl font-bold">MyLogo</div>
+                <div className="text-xl font-bold">Whyral.ai</div>
         <nav className="hidden md:flex items-center gap-6 font-medium">
           <a href="#" className="hover:text-blue-400 transition">Home</a>
           <a href="#" className="hover:text-blue-400 transition">About</a>
