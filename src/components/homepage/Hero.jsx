@@ -2,15 +2,12 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const platforms = [
+  'whyral.ai',
   'YouTube',
   'Instagram',
   'Facebook',
-  'LinkedIn',
-  'Threads',
   'TikTok',
-  'Quora',
-  'X Platform',
-  'with whyral.ai',
+  
 ];
 
 const Hero = () => {
@@ -21,19 +18,19 @@ const Hero = () => {
   }, []);
 
   const totalItems = loopedPlatforms.length;
-  const itemHeight = 60; 
-  const durationPerItem = 0.2;
-  const pauseOnWhyral = 3;
+  const itemHeight = 100; 
+  const durationPerItem = 1;
+  const pauseOnWhyral = 9;
 
   const totalHeight = totalItems * itemHeight;
   const scrollHeight = -(totalHeight / 2); 
 
   return (
-    <section className="relative bg-white/10 py-28 px-28 mx-9 rounded-3xl text-white overflow-hidden">
+    <section className="relative bg-white/10 py-28 px-28 mx-universal rounded-3xl text-white overflow-hidden">
       <div className="relative z-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4">
           Build Your Empire on{' '}
-          <span className="inline-block h-[70px] w-[400px] overflow-hidden align-middle relative">
+          <span className="inline-block h-[70px] w-[450px] overflow-hidden align-middle relative">
             <motion.div
               animate={{
                 y: [0, scrollHeight],
@@ -46,15 +43,16 @@ const Hero = () => {
               className="absolute top-0 left-0"
             >
               {loopedPlatforms.map((platform, index) => (
-                <div
-                  key={index}
-                  className={` flex items-end text-yellow-400 text-7xl ${
-                    platform === 'with whyral.ai' ? 'text-white font-bold' : ''
-                  }`}
-                >
-                  {platform}
-                </div>
-              ))}
+  <div
+    key={index}
+    className={`mb-6 flex items-end text-brand text-7xl ${
+      platform === 'whyral.ai' ? 'text-brand font-bold' : ''
+    }`}
+  >
+    {platform}
+  </div>
+))}
+
             </motion.div>
           </span>
         </h1>
@@ -69,7 +67,7 @@ const Hero = () => {
             placeholder="Enter your email"
             className="p-3 rounded-l-lg w-64 sm:w-80 md:w-96 text-black"
           />
-          <button className="bg-yellow-500 text-black p-3 rounded-r-lg">
+          <button className="bg-brand text-black p-3 rounded-r-lg">
             Get Started Now
           </button>
         </div>

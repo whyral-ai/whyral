@@ -9,6 +9,12 @@ export default {
       backdropBlur: {
       xs: '2px',
     },
+    spacing: {
+        'universal': '2.25rem', //mx-universal
+      },
+      colors: {
+        brand: '#FACC15',
+      }
     },
   },
   plugins: [],
