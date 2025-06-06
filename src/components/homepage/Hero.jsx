@@ -58,7 +58,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-2xl font-semibold">
-          Your system for consistent content creation
+          One system. Endless growth.
         </p>
 
         <div className="mt-6">
