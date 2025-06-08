@@ -6,6 +6,7 @@ import Hero from '../components/homepage/Hero';
 import Brands from '../components/homepage/Brands';
 import Layout from '../Layout';
 import MobileScreen from '../components/homepage/MobileScreen';
+import Test from '../components/homepage/test';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
         <Brands />
         <MobileScreen />
       </Layout>
+      <Test />
       
       
     </div>

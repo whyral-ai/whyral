@@ -1,0 +1,55 @@
+{
+  "channelInfo": {
+    "name": "Your Future",
+    "subscribers": "867k",
+    "description": "Total subscribers",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJyjG6_xI361bJFK-7Z3xBEH7NhtkoUrTAcQ&s"
+  },
+  "analytics": [
+    { "title": "Views", "value": "5.3M" },
+    { "title": "Watch Time (hrs)", "value": "120k" },
+    { "title": "Subscribers", "value": "8.2k" },
+    { "title": "Revenue", "value": "$7.1k" }
+  ],
+  "videos": [
+    {
+      "title": "This is the Worst Rated Mall in India! *SCAM*",
+      "timestamp": "15 hours 14 minutes ago",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1S1O6wWpdlcOcZ2NfH_GpXIdx-SabzbotfA&s",
+      "views": "731k",
+      "likes": "45k",
+      "comments": "234",
+      "extraMetrics": {
+        "views": "729k",
+        "ctr": "8.2%",
+        "avgDuration": "6:23"
+      }
+    },
+    {
+      "title": "The Man Who Created His OWN Country | Where is Kailasa? | Dhruv Rathee",
+      "timestamp": "1 day ago",
+      "thumbnail": "https://i.ytimg.com/vi/7NmocR2HKJo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC4CMfQ9GJDFqEDnPOscN8TJ236mQ",
+      "views": "512k",
+      "likes": "21k",
+      "comments": "130",
+      "extraMetrics": {
+        "views": "498k",
+        "ctr": "7.5%",
+        "avgDuration": "5:47"
+      }
+    },
+    {
+      "title": "Spending 24 Hours In A City With No Laws",
+      "timestamp": "2 days ago",
+      "thumbnail": "https://i.ytimg.com/vi/H1WBdh56Vq4/maxresdefault.jpg",
+      "views": "613k",
+      "likes": "36k",
+      "comments": "180",
+      "extraMetrics": {
+        "views": "601k",
+        "ctr": "9.1%",
+        "avgDuration": "7:12"
+      }
+    }
+  ]
+}
