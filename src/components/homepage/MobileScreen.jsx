@@ -1,12 +1,55 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import {
-  FaChevronDown, FaChevronUp, FaArrowCircleUp
+  FaChevronDown,
+  FaChevronUp,
+  FaArrowCircleUp,
+  FaInstagram,
+  FaFacebook,
+  FaLinkedin,
+  FaQuora,
+  FaSnapchat,
+  FaWhatsapp,
+  FaYoutube
 } from "react-icons/fa";
 import { MdOutlineAttachMoney, MdOutlineInsertComment } from "react-icons/md";
+import { CiCirclePlus } from "react-icons/ci";
+import { IoMdNotificationsOutline } from "react-icons/io";
 import { GoGraph } from "react-icons/go";
 import { BiLike } from "react-icons/bi";
+
 import data from "../../data/homeData.json";
+
+const floatingIcons = [
+  { Icon: FaInstagram, color: "#E1306C" },
+  { Icon: FaYoutube, color: "#FF0000" },
+  { Icon: FaFacebook, color: "#1877F2" },
+  { Icon: FaLinkedin, color: "#0077B5" },
+  { Icon: FaQuora, color: "#A82400" },
+  { Icon: FaSnapchat, color: "#FFFC00" },
+  { Icon: FaWhatsapp, color: "#25D366" },
+  { Icon: FaInstagram, color: "#E1306C" },
+  { Icon: FaYoutube, color: "#FF0000" },
+  { Icon: FaFacebook, color: "#1877F2" },
+  { Icon: FaLinkedin, color: "#0077B5" },
+  { Icon: FaQuora, color: "#A82400" },
+  { Icon: FaSnapchat, color: "#FFFC00" },
+  { Icon: FaWhatsapp, color: "#25D366" },
+  { Icon: FaInstagram, color: "#E1306C" },
+  { Icon: FaYoutube, color: "#FF0000" },
+  { Icon: FaFacebook, color: "#1877F2" },
+  { Icon: FaLinkedin, color: "#0077B5" },
+  { Icon: FaQuora, color: "#A82400" },
+  { Icon: FaSnapchat, color: "#FFFC00" },
+  { Icon: FaWhatsapp, color: "#25D366" },
+  { Icon: FaInstagram, color: "#E1306C" },
+  { Icon: FaYoutube, color: "#FF0000" },
+  { Icon: FaFacebook, color: "#1877F2" },
+  { Icon: FaLinkedin, color: "#0077B5" },
+  { Icon: FaQuora, color: "#A82400" },
+  { Icon: FaSnapchat, color: "#FFFC00" },
+  { Icon: FaWhatsapp, color: "#25D366" },
+];
 
 const StatCard = ({ title, value }) => (
   <div className="flex flex-col justify-between bg-white/10 px-5 py-4 rounded-xl w-[48%] shadow-md border border-white/10">
@@ -94,11 +137,57 @@ const VideoCard = ({ video }) => {
   );
 };
 
+const BackgroundIcons = ({ isVisible }) => {
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.4 }}
+          exit={{ opacity: 0 }}
+          className="absolute inset-0 z-0"
+        >
+          {floatingIcons.map(({ Icon, color }, idx) => (
+            <motion.div
+              key={idx}
+              className="absolute"
+              style={{
+                top: `${Math.random() * 80}%`,
+                left: `${Math.random() * 80}%`,
+              }}
+              initial={{ scale: 0, y: 20, opacity: 0 }}
+              animate={{
+                scale: 1,
+                y: [0, 5, -5, 0],
+                opacity: 7,
+              }}
+              transition={{
+                duration: 4 + Math.random() * 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+                delay: idx * 0.3,
+              }}
+            >
+              <Icon size={60} color={color} />
+            </motion.div>
+          ))}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 const MobileScreen = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
   const { channelInfo, analytics, videos } = data;
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-black mx-universal">
+
+      {/* Animated Background Icons */}
+      <BackgroundIcons isVisible={isInView} />
 
       <div className="absolute -bottom-10 z-0 w-full h-44 bg-white/10 rounded-2xl items-center px-4 hidden md:flex">
         <div className="flex justify-between items-center w-full">
@@ -111,7 +200,10 @@ const MobileScreen = () => {
         </div>
       </div>
 
-      <div className="relative z-10 w-[360px] h-[740px] rounded-[2.5rem] bg-black border-[8px] border-[#c16b24] shadow-2xl overflow-hidden">
+      <div
+        className="relative z-10 w-[360px] h-[740px] rounded-[2.5rem] bg-black border-[8px] border-brand shadow-2xl overflow-hidden"
+        ref={containerRef}
+      >
         <div className="w-full h-full rounded-[2rem] overflow-y-auto pt-10 px-4 pb-6 hide-scrollbar">
 
           <div className="absolute top-2 left-1/2 -translate-x-1/2 flex items-center w-full justify-center space-x-1">
@@ -120,6 +212,34 @@ const MobileScreen = () => {
             </div>
             <div className="w-2 h-2 bg-gray-500 rounded-full" />
           </div>
+          <div className="flex items-center justify-between mb-6 px-4">
+  {/* Left Section */}
+  <div className="flex items-center gap-3">
+    <FaYoutube className="w-10 h-10 text-red-600" />
+    <h1 className="text-white text-[20px] font-bold">Studio</h1>
+  </div>
+
+  {/* Right Section */}
+  <div className="flex items-center gap-4">
+    {/* Plus Icon */}
+    <button className="text-white hover:text-gray-300">
+      <CiCirclePlus className="w-5 h-5" />
+    </button>
+
+    {/* Notification Icon */}
+    <button className="text-white hover:text-gray-300">
+      <IoMdNotificationsOutline className="w-5 h-5" />
+    </button>
+
+    {/* Profile Image */}
+    <img
+      src="https://avatars.githubusercontent.com/u/214420633?s=200&v=4"
+      alt="Profile"
+      className="w-8 h-8 rounded-full object-cover"
+    />
+  </div>
+</div>
+
 
           <div className="flex items-center space-x-4 rounded-xl p-4 mb-5 bg-[#1c1c1c] shadow-inner">
             <img
@@ -127,6 +247,7 @@ const MobileScreen = () => {
               alt="Avatar"
               className="w-16 h-16 rounded-full object-cover"
             />
+            
             <div>
               <h2 className="text-xl font-semibold text-white">{channelInfo.name}</h2>
               <p className="text-sm font-bold text-white">{channelInfo.subscribers}</p>
@@ -147,7 +268,6 @@ const MobileScreen = () => {
               <VideoCard key={idx} video={video} />
             ))}
           </div>
-
         </div>
       </div>
     </div>

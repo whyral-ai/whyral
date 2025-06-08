@@ -6,7 +6,9 @@ import Hero from '../components/homepage/Hero';
 import Brands from '../components/homepage/Brands';
 import Layout from '../Layout';
 import MobileScreen from '../components/homepage/MobileScreen';
-
+import Test from '../components/homepage/Test';
+import WhyVideoViral from '../components/homepage/features/WhyVideoViral';
+import RealTimeFeatures from '../components/homepage/features/RealTimeFeatures';
 
 const Home = () => {
   return (
@@ -17,7 +19,10 @@ const Home = () => {
         <Hero />
         <Brands />
         <MobileScreen />
+        <Test />
       </Layout>
+      <WhyVideoViral />
+      <RealTimeFeatures />
       
       
     </div>
