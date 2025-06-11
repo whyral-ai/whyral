@@ -9,6 +9,8 @@ import MobileScreen from '../components/homepage/MobileScreen';
 import Test from '../components/homepage/Test';
 import WhyVideoViral from '../components/homepage/features/WhyVideoViral';
 import RealTimeFeatures from '../components/homepage/features/RealTimeFeatures';
+import Testimonials from '../components/homepage/Testimonials';
+import Footer from '../components/homepage/Footer';
 
 const Home = () => {
   return (
@@ -23,6 +25,8 @@ const Home = () => {
       </Layout>
       <WhyVideoViral />
       <RealTimeFeatures />
+      <Testimonials />
+      <Footer />
       
       
     </div>

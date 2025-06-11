@@ -1,40 +1,46 @@
 import React from "react";
-import { motion } from "framer-motion";
 
-const RealTimeFeatures = () => {
+const RealTimeFeatures = ({ label, title, description, buttonText, imgUrl }) => {
   return (
-    <motion.div
-      className="bg-white/10 rounded-lg flex flex-col p-6"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.05 }}
-    >
-      <h1 className="text-2xl text-brand font-bold mb-2">AI AGENT</h1>
-      <h2 className="text-xl font-semibold mb-4 text-white">
-        Real Time Tags & Title Updation
-      </h2>
-      <p className="text-white mb-6 leading-relaxed text-sm sm:text-base">
-        AI ke help se aapke old and latest video ko tags and titles ko updates karne ke
-        suggestion diye jayenge jisase video aur viral hone me help hogi.
+    <div className="bg-white/10 rounded-2xl p-6 flex flex-col items-start justify-between space-y-4">
+      <p className="text-xs text-yellow-400 uppercase tracking-widest font-medium">
+        {label}
       </p>
-      <button className="bg-brand text-black px-5 py-2 w-40 rounded hover:bg-hover mb-6 transition">
-        Try for Free
+      <h2 className="text-2xl font-semibold text-white">{title}</h2>
+      <p className="text-white text-sm leading-relaxed sm:text-base">
+        {description}
+      </p>
+      <button className="bg-yellow-400 text-black px-6 py-2 rounded-md hover:bg-yellow-300 transition-colors text-sm font-semibold">
+        {buttonText}
       </button>
-      <img
-        src="https://template.canva.com/EAFijA-Es8I/2/0/1600w-GYC6pgjsZrM.jpg"
-        alt="AI Agent Illustration"
-        className="w-36 h-36 object-cover mx-auto"
-      />
-    </motion.div>
+      <div className="w-full flex justify-center">
+        <img
+          src={imgUrl}
+          alt="Illustration"
+          className="w-44 h-44 object-cover rounded-lg"
+        />
+      </div>
+    </div>
   );
 };
 
 export default function TwoCards() {
   return (
-    <div className="flex flex-col sm:flex-row justify-start gap-8 mx-universal mt-9">
-      <RealTimeFeatures />
-      <RealTimeFeatures />
+    <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 md:mx-universal py-10">
+      <RealTimeFeatures
+        label="AI Agent"
+        title="Real-Time Tags & Title Updation"
+        description="Leverage AI to receive actionable suggestions for updating tags and titles on both old and new videos, enhancing their potential to go viral."
+        buttonText="Try for Free"
+        imgUrl="https://template.canva.com/EAFijA-Es8I/2/0/1600w-GYC6pgjsZrM.jpg"
+      />
+      <RealTimeFeatures
+        label="Content Hunting"
+        title="High-Viral Video Suggestions for Our Members"
+        description="Access a curated feed of trending video ideas based on real-time insights from YouTube to stay consistently ahead of content trends."
+        buttonText="Hunt Now"
+        imgUrl="https://template.canva.com/EAFijA-Es8I/2/0/1600w-GYC6pgjsZrM.jpg"
+      />
     </div>
   );
 }

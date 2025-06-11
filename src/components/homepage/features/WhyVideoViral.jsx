@@ -12,7 +12,6 @@ export default function WhyVideoViral() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="flex flex-col md:flex-row w-full bg-white/10 rounded-xl shadow-xl overflow-hidden"
       >
-        {/* Left Content */}
         <div className="flex-1 p-8 space-y-6">
           <p className="text-sm text-brand uppercase tracking-wide font-semibold">
             magic
@@ -45,7 +44,6 @@ export default function WhyVideoViral() {
           </div>
         </div>
 
-        {/* Right Image */}
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
